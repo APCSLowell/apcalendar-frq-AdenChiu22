@@ -55,7 +55,8 @@ public class APCalendar
    */
   public static int dayOfWeek(int month, int day, int year)
   {
-    int additionalDays = dayOfYear(month, day, year) - firstDayOfYear(year);
-    return (firstDayOfYear(year) + additionalDays) % 7;
+     int firstDay = firstDayOfYear(year);
+    int doy = dayOfYear(month, day, year);
+    return (firstDay + doy - 1) % 7;
   }
 }
